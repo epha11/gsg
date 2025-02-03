@@ -179,9 +179,8 @@
             <img src="your-image.jpg" alt="Corner Image" width="40" height="40">
         </div>
         
-
         <div class="profile-container">
-            <img src="download.png" alt="Profile Picture" class="profile-pic">
+            <img src="download.jpg" alt="Profile Picture" class="profile-pic">
             <p class="name">Cinderella GSG</p>
             <p class="bio">34 hacks<br>11 bug exploits<br>1 kamikaze drone<br>18 builds<br></p>
             <p class="encrypted">U2FsdGVkX1/5fRqf2Fv+ctVHqLnXPvMz/p/eepEwLsu8pH9sAltv9Pa9nauBrbZp+OphLOJuHwwzwgF/lPTYcp6Yr2fOeyis</p>
@@ -189,15 +188,21 @@
         </div>
     </div>
 
-    <audio id="bg-music" autoplay loop>
+    <audio id="bg-music">
         <source src="song.mp3" type="audio/mp3">
     </audio>
-</div>
+    
 
     <script>
         document.getElementById('startBtn').addEventListener('click', function() {
             document.querySelector('.fullscreen').style.display = 'none';
             document.querySelector('.main-content').style.display = 'block';
+
+            // Play the music after the button is clicked
+            document.getElementById('bg-music').play();
+
+            // Start the typing animation after the button is clicked
+            setInterval(createTypingAnimation, 3000);
         });
 
         function createTypingAnimation() {
@@ -223,7 +228,14 @@
             type();
             setTimeout(() => element.remove(), 5000);
         }
-        setInterval(createTypingAnimation, 3000);
+
+        document.getElementById('startBtn').addEventListener('click', function() {
+
+    document.getElementById('bg-music').play();
+});
+
+
     </script>
 </body>
 </html>
+ 
