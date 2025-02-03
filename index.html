@@ -19,8 +19,8 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+        }
 
-            
         .fullscreen {
             position: absolute;
             top: 0;
@@ -33,7 +33,6 @@
             align-items: center;
         }
 
-        /* Button style */
         .start-button {
             font-size: 24px;
             padding: 15px 30px;
@@ -49,12 +48,10 @@
             background-color: #ddd;
         }
 
-        /* Main content hidden initially */
         .main-content {
             display: none;
         }
 
-        /* Video Background */
         .video-container {
             position: fixed;
             top: 0;
@@ -71,18 +68,16 @@
             object-fit: cover;
         }
 
-        /* Dark overlay to dim the video */
         .overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(0, 0, 30, 0.55); /* Dark navy blue tint */
+            background: rgba(0, 0, 30, 0.55);
             z-index: -1;
         }
 
-        /* The Main Profile Box */
         .profile-container {
             position: absolute;
             top: 50%;
@@ -90,7 +85,7 @@
             transform: translate(-50%, -50%);
             width: 420px;
             height: 600px;
-            background: linear-gradient(135deg, rgba(5, 10, 50, 0.8), rgba(0, 50, 100, 0.6)); /* More navy blue */
+            background: linear-gradient(135deg, rgba(5, 10, 50, 0.8), rgba(0, 50, 100, 0.6));
             border-radius: 20px;
             padding: 20px;
             display: flex;
@@ -100,22 +95,19 @@
             backdrop-filter: blur(12px);
             box-shadow: 0 0 25px rgba(0, 50, 100, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            overflow: hidden; /* Prevent overflow */
+            overflow: hidden;
         }
 
-/* Profile Picture */
-.profile-pic {
-    width: 180px; /* Increased for a larger display */
-    height: 180px;
-    border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    object-fit: cover; /* Ensures no squishing */
-    object-position: center; /* Keeps the subject in the center */
-    box-shadow: 0 0 20px rgba(0, 50, 100, 0.7);
-}
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            object-fit: cover;
+            object-position: center;
+            box-shadow: 0 0 20px rgba(0, 50, 100, 0.7);
+        }
 
-
-        /* Name */
         .name {
             margin-top: 15px;
             color: white;
@@ -123,7 +115,6 @@
             font-weight: bold;
         }
 
-        /* Bio */
         .bio {
             margin-top: 15px;
             text-align: left;
@@ -132,7 +123,6 @@
             font-weight: bold;
         }
 
-        /* Multi-line paragraph */
         .paragraph {
             margin-top: 20px;
             color: white;
@@ -142,80 +132,98 @@
             line-height: 1.6;
         }
 
-        /* Encrypted String: Make it wrap within the box */
         .encrypted {
-            word-wrap: break-word; /* Break long strings into multiple lines */
-            white-space: normal; /* Allow normal whitespace handling */
-            word-break: break-all; /* Break long words */
-            font-size: 14px; /* Optional: decrease size for long strings */
+            word-wrap: break-word;
+            white-space: normal;
+            word-break: break-all;
+            font-size: 14px;
             color: white;
             text-align: left;
         }
 
-        /* Background Music (Hidden) */
-        audio {
-            display: none;
+        .corner-text {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            width: 200px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            overflow: hidden;
+        }
+
+        .typing-animation {
+            position: absolute;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            white-space: nowrap;
         }
     </style>
 </head>
 <body>
-
-    <!-- Initial page with the button -->
     <div class="fullscreen">
         <button class="start-button" id="startBtn">????</button>
     </div>
 
-    <!-- Main content hidden initially -->
     <div class="main-content">
-        <!-- Video Background Container -->
         <div class="video-container">
             <video autoplay loop muted>
                 <source src="background.mp4" type="video/mp4">
             </video>
         </div>
 
-        <!-- Dark Overlay -->
         <div class="overlay"></div>
 
-        <!-- Profile Card -->
+        <div class="corner-text">
+            <img src="your-image.jpg" alt="Corner Image" width="40" height="40">
+        </div>
+        
+
         <div class="profile-container">
             <img src="download.jpg" alt="Profile Picture" class="profile-pic">
-            <p class="name">Cinderella GSG</p> <!-- Name -->
-            <p class="bio">
-                34 hacks<br>
-                11 bug exploits<br>
-                1 kamikaze drone<br>
-                18 builds<br>
-            </p>
-
-
-            <p class="encrypted">
-U2FsdGVkX1/5fRqf2Fv+ctVHqLnXPvMz/p/eepEwLsu8pH9sAltv9Pa9nauBrbZp+OphLOJuHwwzwgF/lPTYcp6Yr2fOeyis
-            </p>
-
-            <!-- Multi-line paragraph -->
-            <p class="paragraph">
-                🇷🇺 🇷🇺 🇷🇺 absolutely freaking crazy person yk?
-            </p>
+            <p class="name">Cinderella GSG</p>
+            <p class="bio">34 hacks<br>11 bug exploits<br>1 kamikaze drone<br>18 builds<br></p>
+            <p class="encrypted">U2FsdGVkX1/5fRqf2Fv+ctVHqLnXPvMz/p/eepEwLsu8pH9sAltv9Pa9nauBrbZp+OphLOJuHwwzwgF/lPTYcp6Yr2fOeyis</p>
+            <p class="paragraph">🇷🇺 🇷🇺 🇷🇺 absolutely freaking crazy person yk?</p>
         </div>
-
-        <!-- Background Music -->
-        <audio id="bg-music" autoplay loop>
-            <source src="song.mp3" type="audio/mp3">
-        </audio>
     </div>
 
-    <script>
+    <audio id="bg-music" autoplay loop>
+        <source src="song.mp3" type="audio/mp3">
+    </audio>
+</div>
 
+    <script>
         document.getElementById('startBtn').addEventListener('click', function() {
-            // Hide the initial screen and show the main content
             document.querySelector('.fullscreen').style.display = 'none';
             document.querySelector('.main-content').style.display = 'block';
-            // Play the audio
-            const music = document.getElementById("bg-music");
-            music.play();
         });
-    </script>
 
+        function createTypingAnimation() {
+            let lyrics = ["i love her ❤", "i toss my pain with my wishes in a wishing well", "i still try even though i know im gonna fail", "im dead", "why am i awake rn", "she is the only one who's ever known who I am, who I'm not, and who I wanna be", "but the drugs wont hurt me", "take a picture... because i wont remember", "Be thou my vision", "how great thou art", "🇺🇸🇺🇸🇷🇺🇷🇺", "6 feet doesnt sound so far down", "I want to be, forever young", "im half the man of the men that drive me places",];
+            let text = lyrics[Math.floor(Math.random() * lyrics.length)];
+            let element = document.createElement("div");
+            element.classList.add("typing-animation");
+            document.body.appendChild(element);
+
+            let x = Math.random() * window.innerWidth;
+            let y = Math.random() * window.innerHeight;
+            element.style.left = `${x}px`;
+            element.style.top = `${y}px`;
+
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text[i];
+                    i++;
+                    setTimeout(type, 100);
+                }
+            }
+            type();
+            setTimeout(() => element.remove(), 5000);
+        }
+        setInterval(createTypingAnimation, 3000);
+    </script>
 </body>
 </html>
