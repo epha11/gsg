@@ -19,9 +19,8 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-        }
 
-        /* Fullscreen black background */
+            
         .fullscreen {
             position: absolute;
             top: 0;
@@ -104,15 +103,17 @@
             overflow: hidden; /* Prevent overflow */
         }
 
-        /* Profile Picture */
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            object-fit: cover;
-            box-shadow: 0 0 20px rgba(0, 50, 100, 0.7);
-        }
+/* Profile Picture */
+.profile-pic {
+    width: 180px; /* Increased for a larger display */
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    object-fit: cover; /* Ensures no squishing */
+    object-position: center; /* Keeps the subject in the center */
+    box-shadow: 0 0 20px rgba(0, 50, 100, 0.7);
+}
+
 
         /* Name */
         .name {
